@@ -11,7 +11,7 @@ export default function	Task({id, title, content, isComplete})
 
 	return (
 		<div className="my-4 flex flex-col">
-			<div className="bg-[#8b0000] h-16 rounded-md flex">
+			<div className="bg-gray-700 h-16 rounded-md flex">
 				<div onClick={() =>
 				{
 					Swal.fire
@@ -21,8 +21,8 @@ export default function	Task({id, title, content, isComplete})
 						theme: "dark",
 					})
 				}} className="flex flex-col justify-center p-4 cursor-pointer overflow-hidden overflow-x-auto">
-					<h3 className="font-bold text-xl text-amber-200">{title.length >= 10 ? title.substr(0, 10) + "..." : title}</h3>
-					<p className="text-white">{content ? (content.length >= 10 ? content.substr(0, 10).trim() + "..." : content) : ""}</p>
+					<h3 className="font-bold text-xl text-amber-200">{title.length > 10 ? title.substr(0, 10) + "..." : title}</h3>
+					<p className="text-white">{content ? (content.length > 20 ? content.substr(0, 20).trim() + "..." : content) : ""}</p>
 				</div>
 				<div className="flex flex-2 gap-4 justify-end items-center p-4">
 					<button onClick={() => (functions.edit_task(id))} className={`${style_button_icons} text-blue-500`}>
