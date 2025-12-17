@@ -216,8 +216,8 @@
   .mx-2 {
     margin-inline: calc(var(--spacing) * 2);
   }
-  .mx-4 {
-    margin-inline: calc(var(--spacing) * 4);
+  .mx-3 {
+    margin-inline: calc(var(--spacing) * 3);
   }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
@@ -527,11 +527,6 @@
   .md\:w-\[640px\] {
     @media (width >= 48rem) {
       width: 640px;
-    }
-  }
-  .lg\:mx-auto {
-    @media (width >= 64rem) {
-      margin-inline: auto;
     }
   }
 }

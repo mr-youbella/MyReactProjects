@@ -83,7 +83,7 @@ export default function	MainTasks()
 	}
 
 	return (
-		<div className="rounded-4xl mb-13 md:w-[640px] border-2 sm:mx-auto">
+		<div className="rounded-4xl mb-13 md:w-[640px] border-2 sm:mx-auto mx-2">
 			<div className="bg-white rounded-4xl px-10 p-4">
 				<div>
 					<h1 className="text-3xl font-bold text-center p-2">Todo List</h1>
