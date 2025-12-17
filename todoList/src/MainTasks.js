@@ -83,36 +83,38 @@ export default function	MainTasks()
 	}
 
 	return (
-		<div className="rounded-4xl mb-13 md:w-[640px] border-2 sm:mx-auto mx-2">
-			<div className="bg-white rounded-4xl px-10 p-4">
-				<div>
-					<h1 className="text-3xl font-bold text-center p-2">Todo List</h1>
-				</div>
-				<hr />
-				<div className="flex p-2 justify-center gap-2">
-					<button onClick={() => (dispatch("All"))} className={`${style_button} hover:bg-gray-500 w-20 ${gategory_type === "All" ? "bg-gray-500" : "bg-gray-300"}`}>All</button>
-					<button onClick={() => (dispatch("Completed"))} className={`${style_button} hover:bg-green-500 ${gategory_type === "Completed" ? "bg-green-500" : "bg-green-300"}`}>Completed</button>
-					<button onClick={() => (dispatch("UnCompleted"))} className={`${style_button} hover:bg-red-500 ${gategory_type === "UnCompleted" ? "bg-red-500" : "bg-red-300"}`}>UnCompleted</button>
-				</div>
-				<form onSubmit={(event) => (event.preventDefault())} className="flex bottom-2 p-4 gap-2 rounded-2xl">
-					<input value={input_task} onChange={(event) => (setInputTask(event.target.value))} className="border-2 border-gray-400 p-2 rounded-3xl font-bold placeholder:text-gray-500 flex-1" placeholder="Enter task" type="text"></input>
-					<button onClick={() =>
-					{
-						if (input_task && input_task.trim().length)
+		<div className="mx-2">
+			<div className="rounded-4xl mb-13 md:w-[640px] border-2 mx-auto">
+				<div className="bg-white rounded-4xl px-10 p-4">
+					<div>
+						<h1 className="text-3xl font-bold text-center p-2">Todo List</h1>
+					</div>
+					<hr />
+					<div className="flex p-2 justify-center gap-2">
+						<button onClick={() => (dispatch("All"))} className={`${style_button} hover:bg-gray-500 w-20 ${gategory_type === "All" ? "bg-gray-500" : "bg-gray-300"}`}>All</button>
+						<button onClick={() => (dispatch("Completed"))} className={`${style_button} hover:bg-green-500 ${gategory_type === "Completed" ? "bg-green-500" : "bg-green-300"}`}>Completed</button>
+						<button onClick={() => (dispatch("UnCompleted"))} className={`${style_button} hover:bg-red-500 ${gategory_type === "UnCompleted" ? "bg-red-500" : "bg-red-300"}`}>UnCompleted</button>
+					</div>
+					<form onSubmit={(event) => (event.preventDefault())} className="flex bottom-2 p-4 gap-2 rounded-2xl">
+						<input value={input_task} onChange={(event) => (setInputTask(event.target.value))} className="border-2 border-gray-400 p-2 rounded-3xl font-bold placeholder:text-gray-500 flex-1" placeholder="Enter task" type="text"></input>
+						<button onClick={() =>
 						{
-							arr = [...tasks, {id: tasks.length + 1, title: input_task, isComplete: false}];
-							setTasks(arr);
-							localStorage.setItem("todoList", JSON.stringify(arr));
-							setInputTask("");
-							window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
-						}
-					}} className={`${input_task && input_task.trim().length ? style_button_active : style_button_unactive}`}>Add</button>
-				</form>
-				<hr />
-				<Functions.Provider value={{complete_task: completeTask, delete_task: deleteTask, edit_task: editTask}}>
-					{gategory_type === "All" ? <All tasks={tasks}/> : gategory_type === "Completed" ? <Complete tasks={tasks}/> : gategory_type === "UnCompleted" ? <UnComplete tasks={tasks}/> : <></>}
-				</Functions.Provider>
-				<ToastContainer />
+							if (input_task && input_task.trim().length)
+							{
+								arr = [...tasks, {id: tasks.length + 1, title: input_task, isComplete: false}];
+								setTasks(arr);
+								localStorage.setItem("todoList", JSON.stringify(arr));
+								setInputTask("");
+								window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
+							}
+						}} className={`${input_task && input_task.trim().length ? style_button_active : style_button_unactive}`}>Add</button>
+					</form>
+					<hr />
+					<Functions.Provider value={{complete_task: completeTask, delete_task: deleteTask, edit_task: editTask}}>
+						{gategory_type === "All" ? <All tasks={tasks}/> : gategory_type === "Completed" ? <Complete tasks={tasks}/> : gategory_type === "UnCompleted" ? <UnComplete tasks={tasks}/> : <></>}
+					</Functions.Provider>
+					<ToastContainer />
+				</div>
 			</div>
 		</div>
 	);
