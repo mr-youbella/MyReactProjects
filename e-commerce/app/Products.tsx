@@ -1,3 +1,4 @@
+import { revalidatePath } from 'next/cache';
 import Image from 'next/image';
 
 interface slide_product_style
@@ -38,7 +39,10 @@ export default async function Products()
 		product_price: "font-bold",
 		old_product_price: "text-xs opacity-55",
 	};
-	let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products.json`);
+	let response = await fetch("https://raw.githubusercontent.com/mr-youbella/MyReactProjects/refs/heads/main/e-commerce/public/products.json",
+	{
+		next: {revalidate: 60}
+	});
 	let	products: Products[] = await response.json();
 
 	return (
