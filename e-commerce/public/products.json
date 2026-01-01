@@ -1,0 +1,23 @@
+[
+	{
+		"title": "32\" Smart TV HD",
+		"price": 1302.3,
+		"old_price": 1802.9,
+		"image": "/products_images/p1.jpg",
+		"is_new_product": true
+	},
+	{
+		"title": "Laptop Gaming",
+		"price": 8500,
+		"old_price": 9200,
+		"image": "/products_images/p2.jpg",
+		"is_new_product": false
+	},
+	{
+		"title": "MacBook Pro",
+		"price": 122230,
+		"old_price": 1333337,
+		"image": "/products_images/p3.jpg",
+		"is_new_product": true
+	}
+]

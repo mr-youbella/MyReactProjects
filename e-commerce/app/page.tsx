@@ -1,127 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Slides from './Slides'
+import MenuBar from './MenuBar';
+import Products from './Products';
 
 export default function Home()
 {
 	return (
 		<div>
-			<div className="flex bg-[#151515]">
-				<div className="flex-1">
-					<img className="w-20 cursor-pointer" src="https://static.vecteezy.com/system/resources/previews/023/654/784/non_2x/golden-logo-template-free-png.png"></img>
-				</div>
-				<div className="flex-1 flex justify-center items-center">
-					<h2 className="text-2xl mx-2 font-bold text-[#C73659] transition-color duration-400 hover:text-[#EEEEEE] cursor-pointer">Home</h2>
-					<h2 className="text-2xl mx-2 font-bold text-[#C73659] transition-color duration-400 hover:text-[#EEEEEE] cursor-pointer">Store</h2>
-					<h2 className="text-2xl mx-2 font-bold text-[#C73659] transition-color duration-400 hover:text-[#EEEEEE] cursor-pointer">About</h2>
-					<h2 className="text-2xl mx-2 font-bold text-[#C73659] transition-color duration-400 hover:text-[#EEEEEE] cursor-pointer">Contact</h2>
-				</div>
-				<div className="flex-1 flex justify-center items-center">
-					<div className="relative w-[70%]">
-						<input className="bg-[#C73659] text-white border-2 border-[#151515] rounded-2xl p-1 pr-10 w-full" type="text" placeholder="Not working yet" readOnly />
-						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-1/2 right-1 cursor-pointer" icon={faMagnifyingGlass} />
-					</div>
-				</div>
-			</div>
+			<MenuBar />
 			<Slides />
-			<div className="overflow-y-hidden md:mx-auto w-[90%] bg-[#EEEEEE] rounded-md m-3">
-				<div className="m-2">
-					<h3 className="text-xl font-bold">Offre Now ➡️</h3>
-					<hr className="w-full"/>
-				</div>
-				<div className="flex">
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-101 min-w-[45%] md:min-w-[15%]">
-						<img className="h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-				</div>
-			</div>
-			<div className="bg-[#EEEEEE] m-1 md:mx-auto  p-3 md:w-2/3 rounded-md text-[#151515]">
-				<div className="m-2">
-					<h3 className="text-xl font-bold">All Product</h3>
-					<hr className="w-full"/>
-				</div>
-				<div className="grid grid-cols-2 md:grid-cols-5 gap-1 justify-items-center">
-					<div className="w-[90%] cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-105">
-						<img className="w-50.5 h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://tse1.mm.bing.net/th/id/OIP.IWLaCH31RqHAU_1aq8YLgAAAAA?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="w-[90%] cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-105">
-						<img className="w-50.5 h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://tse1.mm.bing.net/th/id/OIP.IWLaCH31RqHAU_1aq8YLgAAAAA?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="w-[90%] cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-105">
-						<img className="w-50.5 h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="w-[90%] cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-105">
-						<img className="w-50.5 h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://tse1.mm.bing.net/th/id/OIP.IWLaCH31RqHAU_1aq8YLgAAAAA?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="w-[90%] cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-105">
-						<img className="w-50.5 h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://tse2.mm.bing.net/th/id/OIP.TjBNXWlIeS008Y7zpTr31gHaE8?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="w-[90%] cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-105">
-						<img className="w-50.5 h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://tse2.mm.bing.net/th/id/OIP.TjBNXWlIeS008Y7zpTr31gHaE8?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-					<div className="w-[90%] cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-105">
-						<img className="w-50.5 h-30.5 md:h-50.5 rounded-2xl mb-2 object-content" src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/04/034646/1.jpg?2339"/>
-						<h3 className="text-sm">32" Smart TV HD 32H5000F...</h3>
-						<p className="font-bold">1302.3 DH <del className="text-xs opacity-55">1802.9 DH</del></p>
-					</div>
-				</div>
-			</div>
-			<footer className="flex flex-col bg-[#1b1b1b] p-4">
+			<Products />
+			<footer className="flex flex-col bg-[#1b1b1b] p-4 mt-5">
 				<div className="p-2 flex">
 					<div>
 						<img className="w-20 cursor-pointer" src="https://static.vecteezy.com/system/resources/previews/023/654/784/non_2x/golden-logo-template-free-png.png" />

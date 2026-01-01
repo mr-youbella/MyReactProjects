@@ -18,7 +18,7 @@ export default function Slides()
 	}, [current_slide]);
 
 	return (
-		<div className="overflow-hidden m-4 rounded-4xl md:w-1/2 md:mx-auto flex">
+		<div className="overflow-hidden m-4 rounded-xl md:w-1/2 md:mx-auto flex">
 			<div className="flex transition-transform duration-500" style={{transform: `translateX(-${current_slide * 100}%)`}}>
 				{images.map((value, index) =>
 				{
