@@ -15,9 +15,37 @@
 	},
 	{
 		"title": "MacBook Pro",
-		"price": 122230,
-		"old_price": 1333337,
+		"price": 1220,
+		"old_price": 1337,
 		"image": "/products_images/p3.jpg",
+		"is_new_product": true
+	},
+	{
+		"title": "Product super",
+		"price": 15.99,
+		"old_price": 20.99,
+		"image": "/products_images/p3.jpg",
+		"is_new_product": true
+	},
+	{
+		"title": "keyborad",
+		"price": 125.5,
+		"old_price": 200,
+		"image": "/products_images/p4.jpg",
+		"is_new_product": false
+	},
+	{
+		"title": "Mouse",
+		"price": 150,
+		"old_price": 200,
+		"image": "/products_images/p3.jpg",
+		"is_new_product": true
+	},
+	{
+		"title": "Sabon",
+		"price": 5,
+		"old_price": 8,
+		"image": "/products_images/p5.jpg",
 		"is_new_product": true
 	}
 ]
