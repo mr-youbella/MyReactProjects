@@ -47,5 +47,26 @@
 		"old_price": 8,
 		"image": "/products_images/p5.jpg",
 		"is_new_product": true
+	},
+	{
+		"title": "Sabon",
+		"price": 5,
+		"old_price": 8,
+		"image": "/products_images/p5.jpg",
+		"is_new_product": true
+	},
+	{
+		"title": "Mouse",
+		"price": 150,
+		"old_price": 200,
+		"image": "/products_images/p3.jpg",
+		"is_new_product": true
+	},
+	{
+		"title": "MacBook Pro",
+		"price": 1220,
+		"old_price": 1337,
+		"image": "/products_images/p3.jpg",
+		"is_new_product": true
 	}
 ]
