@@ -1,15 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import Slides from './Slides'
-import MenuBar from './MenuBar';
 import Products from './Products';
+import FrontPage from './FrontPage';
 
 export default function Home()
 {
 	return (
 		<div>
-			<MenuBar />
-			<Slides />
+			<FrontPage />
 			<Products />
 			<footer className="flex flex-col bg-[#1b1b1b] p-4 mt-5">
 				<div className="p-2 flex">

@@ -6,7 +6,7 @@
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: hsl(222, 47%, 11%);
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {

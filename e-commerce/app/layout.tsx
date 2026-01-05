@@ -14,7 +14,7 @@ export default function RootLayout({children}: Readonly<
 {
 	return (
 		<html lang="en">
-			<body className="bg-[#050A13] scroll-smooth">
+			<body className="bg-[#8a9198] scroll-smooth">
 				{children}
 			</body>
 		</html>
