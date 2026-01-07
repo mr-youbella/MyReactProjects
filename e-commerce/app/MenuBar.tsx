@@ -85,7 +85,7 @@ export default function MenuBar()
 				<div className="flex justify-center items-center w-full">
 					<div className="relative w-[80%] m-4">
 						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#8DB0F0] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="text" placeholder="Search your Product" />
-						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-1/2 right-1 cursor-pointer" icon={faMagnifyingGlass} />
+						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-y-1/2 right-1 cursor-pointer" icon={faMagnifyingGlass} />
 						<SearchResult products={products} search={search} is_focus={is_focus}/>
 					</div>
 				</div>
