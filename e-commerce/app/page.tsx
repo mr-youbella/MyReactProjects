@@ -1,5 +1,5 @@
-import Products from './Products';
-import FrontPage from './FrontPage';
+import Products from './Home/Products';
+import FrontPage from './Home/FrontPage';
 import Footer from './Footer';
 
 export default function Home()

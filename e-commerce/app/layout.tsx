@@ -13,8 +13,8 @@ export default function RootLayout({children}: Readonly<
 }>)
 {
 	return (
-		<html lang="en">
-			<body className="bg-[#8a9198] scroll-smooth">
+		<html lang="en" className="scroll-smooth">
+			<body className="bg-[#8a9198]">
 				{children}
 			</body>
 		</html>
