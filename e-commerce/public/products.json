@@ -11,7 +11,6 @@
 		"id": "2",
 		"title": "Laptop Gaming",
 		"price": 8500,
-		"old_price": 9200,
 		"image": "/products_images/p2.jpg",
 		"is_new_product": false
 	},
@@ -35,7 +34,6 @@
 		"id": "5",
 		"title": "keyborad",
 		"price": 125.5,
-		"old_price": 200,
 		"image": "/products_images/p4.jpg",
 		"is_new_product": false
 	},
