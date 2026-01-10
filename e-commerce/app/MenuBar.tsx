@@ -54,7 +54,7 @@ export default function MenuBar()
 			<div className={`flex delay-100 duration-300 ${menu_bar ? "bg-[#151515]" : "bg-[#15151560]"}`}>
 				<div className="flex-1">
 					<div className="aspect-square w-20 cursor-pointer relative">
-						<Link href="/" className="absolute inset-0 z-10"></Link>
+						<Link href="/" className="absolute inset-0 z-10" aria-label="Home Page"></Link>
 						<Image className="object-cover" fill src="/products_images/logo.webp" alt="logo" sizes="80px"/>
 					</div>
 				</div>
@@ -66,7 +66,7 @@ export default function MenuBar()
 				</div>
 				<div className="flex-1 hidden sm:flex justify-center items-center relative">
 					<div className="relative w-[70%]">
-						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#8DB0F0] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="text" placeholder="Search your Product" />
+						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#0F1E3A] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="text" placeholder="Search your Product" />
 						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-y-1/2 right-1 cursor-pointer" icon={faMagnifyingGlass} />
 						<SearchResult products={products} search={search} is_focus={is_focus}/>
 					</div>
@@ -82,7 +82,7 @@ export default function MenuBar()
 				<button className="text-2xl mx-5 p-1 font-bold text-[#A2B2D2] transition-color duration-400 hover:text-[#F4F8FF] cursor-pointer">Contact</button>
 				<div className="flex justify-center items-center w-full">
 					<div className="relative w-[80%] m-4">
-						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#8DB0F0] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="text" placeholder="Search your Product" />
+						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#0F1E3A] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="text" placeholder="Search your Product" />
 						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-y-1/2 right-1 cursor-pointer" icon={faMagnifyingGlass} />
 						<SearchResult products={products} search={search} is_focus={is_focus}/>
 					</div>

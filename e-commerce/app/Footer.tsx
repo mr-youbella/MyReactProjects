@@ -1,6 +1,7 @@
 import type { JSX } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import Image from 'next/image';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 export default function Footer(): JSX.Element {
@@ -8,8 +9,8 @@ export default function Footer(): JSX.Element {
 		<footer className="flex flex-col gap-2 bg-[#1b1b1b] p-4 mt-4">
 			<div className="flex-1">
 				<div className="p-2 flex">
-					<div>
-						<img className="w-20 cursor-pointer" src="https://static.vecteezy.com/system/resources/previews/023/654/784/non_2x/golden-logo-template-free-png.png" />
+					<div className="relative w-20 aspect-square">
+						<Image src="/products_images/logo.webp" alt="logo" fill sizes="80px"/>
 					</div>
 					<div className="w-full flex justify-center items-center">
 						<h2 className="text-5xl text-white">Youbella Store</h2>

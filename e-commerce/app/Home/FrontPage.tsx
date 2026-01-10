@@ -18,7 +18,7 @@ export default function FrontPage(): JSX.Element
 					<Link className="inline-block my-10 bg-amber-50 p-2 px-5 rounded-3xl text-black text-xl cursor-pointer hover:bg-amber-100" href="/Store">Shop Now</Link>
 			</div>
 			<div className="flex justify-center">
-				<a className="scroll-smooth" href="#products"><FontAwesomeIcon className="text-center text-4xl mb-5 w-10 aspect-square animate-bounce" icon={faAnglesDown} /></a>
+				<a className="scroll-smooth" href="#products"><FontAwesomeIcon className="text-center text-4xl mb-5 w-10 aspect-square animate-bounce" icon={faAnglesDown} aria-label="Scroll to producs"/></a>
 			</div>
 		</div>
 	);

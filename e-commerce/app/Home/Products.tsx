@@ -52,7 +52,7 @@ export default async function Products()
 						<hr className="w-full" />
 					</div>
 					<div>
-						<h5 className="text-md text-orange-700 cursor-pointer">More Products {'>'}</h5>
+						<p className="text-md text-orange-700 cursor-pointer">More Products {'>'}</p>
 					</div>
 				</div>
 				<div className="overflow-y-hidden custom-scroll">
