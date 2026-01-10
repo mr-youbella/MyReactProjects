@@ -55,7 +55,7 @@ export default function MenuBar()
 				<div className="flex-1">
 					<div className="aspect-square w-20 cursor-pointer relative">
 						<Link href="/" className="absolute inset-0 z-10"></Link>
-						<Image className="object-cover" fill src="/products_images/logo.webp" alt="logo"/>
+						<Image className="object-cover" fill src="/products_images/logo.webp" alt="logo" sizes="80px"/>
 					</div>
 				</div>
 				<div className="flex-1 hidden sm:flex justify-center items-center">

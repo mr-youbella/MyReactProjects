@@ -1,5 +1,5 @@
 'use client';
-import { JSX, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 import ProductApi from '../Api/ProductsApi';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,24 +15,27 @@ interface product_style
 	old_product_price: string,
 }
 
-export default async function	FilterProduct(): Promise<JSX.Element>
+export default function FilterProduct(): JSX.Element
 {
 	let	gategory =
 	[
 		{
-			name: "Electorinic",
+			name: "all",
+			amount: 53
+		},
+		{
+			name: "electorinic",
 			amount: 3
 		},
 		{
-			name: "Beuaty",
+			name: "beuaty",
 			amount: 13
 		},
 		{
-			name: "Sport",
+			name: "sport",
 			amount: 37
 		},
 	];
-	let	[index_gategory, setIndexGtergory] = useState<number>(0);
 	let	all_product_style: product_style =
 	{
 		product_div: "w-full sm:w-[80%] cursor-pointer hover:shadow-2xl p-1 transation duration-300 hover:scale-105",
@@ -42,31 +45,56 @@ export default async function	FilterProduct(): Promise<JSX.Element>
 		product_price: "font-bold",
 		old_product_price: "text-xs opacity-55",
 	};
-	let	products: ProductsType[] | undefined = undefined;
-	try
+	let	[products, setProducts] = useState<ProductsType[] | undefined>(undefined);
+	useEffect(() =>
 	{
-		products = await ProductApi();
-	}
-	catch (err)
+		async function getProductData()
+		{
+			try
+			{
+				products = await ProductApi();
+				setProducts(products);
+			}
+			catch (err)
+			{
+				console.log(err);
+			}
+		}
+		getProductData();
+	}, []);
+	let	[index_gategory, setIndexGatergory] = useState<number>(0);
+	let	[range, setRange] = useState<number>(100);
+	let	min_range: number = (products && Math.min(...products?.map((value) => (value.price)))) || 0;
+	let	max_range: number = (products && Math.max(...products?.map((value) => (value.price)))) || 0;
+	let	[sort, setSort] = useState<string>("HTL");
+	let	[filter_product, setFilterProduct] = useState<ProductsType[] | undefined>(undefined);
+	useEffect(() =>
 	{
-		console.log(err);
-	}
+		if (!products)
+			return ;
+		const	sorted: ProductsType[] | undefined = [...products].sort((a, b) => (sort === "HTL" ? b.price - a.price : a.price - b.price));
+		const	filter: ProductsType[] | undefined = sorted?.filter((value) => (value.price >= min_range && value.price <= Math.floor(min_range + (range / 100) * (max_range - min_range))));
+		if (index_gategory)
+			setFilterProduct(filter.filter((value) => (value.gategory === gategory[index_gategory].name)));
+		else
+			setFilterProduct(filter);
+	}, [products, sort, index_gategory, range]);
 
 	return (
 		<div className="flex flex-col sm:flex-row sm:my-20 xl:mx-45">
 			<div className="sm:w-[35%] p-10">
 				<h3 className="text-xl mb-2">Filter by Price</h3>
-				<input className="block w-full mb-2" type="range"/>
+				<input min={0} max={100} onChange={(event) => (setRange(Number(event.target.value)))} value={range} className="block w-full mb-2 accent-blue-600" type="range"/>
 				<div className="flex">
-					<button className="rounded-sm text-white bg-blue-500 p-1 w-[30%] mb-2 mr-2">Filter</button>
-					<p className="flex justify-end my-auto w-full h-full">Price: $40 — $150</p>
+					<button className="rounded-sm text-white bg-blue-500 p-1 w-[30%] mb-2 mr-2 cursor-pointer hover:bg-blue-600">Filter</button>
+					<p className="flex justify-end my-auto w-full h-full">Price: {min_range} DH — {Math.floor(min_range + (range / 100) * (max_range - min_range))} DH</p>
 				</div>
 				<h3 className="mt-10 mb-5 text-2xl">Gategory</h3>
 				<div className="flex flex-col leading-5">
 					{gategory.map((value, index) =>
 					{
 						return (
-							<button key={index} onClick={() => (setIndexGtergory(index), console.log(index))} className="text-start flex justify-between py-2 cursor-pointer hover:text-cyan-700">{value.name}<span>({value.amount})</span></button>
+							<button key={index} onClick={() => (setIndexGatergory(index))} className="text-start flex justify-between py-2 cursor-pointer capitalize hover:text-cyan-700">{value.name}<span>({value.amount})</span></button>
 						);
 					})}
 				</div>
@@ -76,13 +104,13 @@ export default async function	FilterProduct(): Promise<JSX.Element>
 					<h3 className="text-4xl font-bold mb-10">{gategory[index_gategory].name}</h3>
 					<p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed ut.</p>
 					<div className="flex justify-end">
-						<select className="my-5 p-1 border rounded-sm">
-							<option>Sort by price: low to high</option>
-							<option>Sort by price: high to low</option>
+						<select onChange={(event) => (setSort(event.target.value))} value={sort} className="my-5 p-1 border rounded-sm">
+							<option value="LTH">Sort by price: low to high</option>
+							<option value="HTL">Sort by price: high to low</option>
 						</select>
 					</div>
 					<div className="grid grid-cols-2 sm:grid-cols-3 gap-1 justify-items-center text-black">
-						{products?.map((value, index) =>
+						{filter_product?.map((value, index) =>
 						{
 							return (
 								<Link key={index} className={all_product_style.product_div} href={`./Store/${value.title}?id=${value.id}`}>

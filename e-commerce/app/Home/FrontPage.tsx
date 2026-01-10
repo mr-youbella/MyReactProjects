@@ -7,7 +7,7 @@ import type { JSX } from 'react';
 
 export default function FrontPage(): JSX.Element
 {
-	let	bg_image:string = "https://png.pngtree.com/background/20230524/original/pngtree-an-electronic-ecommerce-computer-screen-with-a-tent-top-in-3d-picture-image_2711691.jpg";
+	let	bg_image:string = "/products_images/bg.jpg";
 
 	return (
 		<div className={`h-screen flex flex-col justify-between bg-no-repeat bg-cover bg-center`} style={{backgroundImage: `url(${bg_image})`}}>

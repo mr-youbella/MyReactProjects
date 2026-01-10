@@ -5,5 +5,6 @@ export interface ProductsType
 	price: number;
 	old_price?: number | undefined;
 	image: string;
+	gategory: string;
 	is_new_product: boolean;
 }
