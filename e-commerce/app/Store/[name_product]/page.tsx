@@ -36,7 +36,7 @@ export default async function	Product(props: {searchParams: {id: string}}): Prom
 					<div className="flex-1 w-full flex flex-col justify-center">
 						<p className="mb-5">Name Gategory</p>
 						<h1 className="text-7xl mb-5">{current_product && current_product.title || "TITLE"}</h1>
-						<h2 className="text-2xl font-bold mb-5">{current_product && current_product.price || "00.00"} DH<del className="opacity-50 font-normal ml-2 text-xl">{current_product && current_product.image ? (current_product.old_price + "DH") : ""}</del></h2>
+						<h2 className="text-2xl font-bold mb-5">{current_product && current_product.price || "00.00"} DH<del className="opacity-50 font-normal ml-2 text-xl">{current_product && current_product.old_price ? (current_product.old_price + "DH") : ""}</del></h2>
 						<p className="mb-5">Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.</p>
 						<hr className="mb-5" />
 						<AddToCartForm current_product={current_product}/>

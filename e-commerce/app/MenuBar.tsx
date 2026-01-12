@@ -17,7 +17,7 @@ interface	props_SearchResult
 function SearchResult({products, search, is_focus}: props_SearchResult): JSX.Element
 {
 	return (
-		<div className={`w-full z-10 bg-[#151515] text-white p-4 overflow-x-auto absolute mt-3 custom-scroll transition duration-300 ${!is_focus ? "opacity-0" : "opacity-100"}`}>
+		<div className={`w-full z-20 bg-[#151515] text-white p-4 overflow-x-auto absolute mt-3 custom-scroll transition duration-300 ${!is_focus ? "opacity-0" : "opacity-100"}`}>
 			{products && search.length != 0 && products.filter((value) => (value.title.toLowerCase().includes(search.toLowerCase()))).map((value, index) =>
 			{
 				return (
@@ -61,13 +61,14 @@ export default function MenuBar()
 				<div className="flex-1 hidden sm:flex justify-center items-center">
 					<Link href="/"><button className="text-2xl mx-2 font-bold text-[#ffffff] transition-color duration-400 hover:text-[#314e81] cursor-pointer">Home</button></Link>
 					<Link href="/Store"><button className="text-2xl mx-2 font-bold text-[#ffffff] transition-color duration-400 hover:text-[#314e81] cursor-pointer">Store</button></Link>
+					<Link href="/Basket"><button className="text-2xl mx-2 font-bold text-[#ffffff] transition-color duration-400 hover:text-[#314e81] cursor-pointer">Basket</button></Link>
 					<button className="text-2xl mx-2 font-bold text-[#ffffff] transition-color duration-400 hover:text-[#314e81] cursor-pointer">About</button>
 					<button className="text-2xl mx-2 font-bold text-[#ffffff] transition-color duration-400 hover:text-[#314e81] cursor-pointer">Contact</button>
 				</div>
 				<div className="flex-1 hidden sm:flex justify-center items-center relative">
 					<div className="relative w-[70%]">
-						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#0F1E3A] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="text" placeholder="Search your Product" />
-						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-y-1/2 right-1 cursor-pointer" icon={faMagnifyingGlass} />
+						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#0F1E3A] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="search" placeholder="Search your Product" />
+						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer text-white" icon={faMagnifyingGlass} />
 						<SearchResult products={products} search={search} is_focus={is_focus}/>
 					</div>
 				</div>
@@ -75,15 +76,16 @@ export default function MenuBar()
 					<FontAwesomeIcon onClick={() => (setMenuBar(!menu_bar))} className="text-white text-4xl" icon={faList} />
 				</div>
 			</div>
-			<div className={`flex flex-col justify-center items-start bg-[#151515] duration-500 ${!menu_bar ? "opacity-0 h-0" : "opacity-100 h-fit"}`}>
+			<div className={`sm:hidden flex flex-col justify-center items-start bg-[#151515] duration-500 ${!menu_bar ? "opacity-0 h-0" : "opacity-100 h-fit"}`}>
 				<Link href="/"><button className="text-2xl mx-5 p-1 font-bold text-[#A2B2D2] transition-color duration-400 hover:text-[#F4F8FF] cursor-pointer">Home</button></Link>
 				<Link href="/Store"><button className="text-2xl mx-5 p-1 font-bold text-[#A2B2D2] transition-color duration-400 hover:text-[#F4F8FF] cursor-pointer">Store</button></Link>
+				<Link href="/Basket"><button className="text-2xl mx-5 p-1 font-bold text-[#A2B2D2] transition-color duration-400 hover:text-[#F4F8FF] cursor-pointer">Basket</button></Link>
 				<button className="text-2xl mx-5 p-1 font-bold text-[#A2B2D2] transition-color duration-400 hover:text-[#F4F8FF] cursor-pointer">About</button>
 				<button className="text-2xl mx-5 p-1 font-bold text-[#A2B2D2] transition-color duration-400 hover:text-[#F4F8FF] cursor-pointer">Contact</button>
 				<div className="flex justify-center items-center w-full">
 					<div className="relative w-[80%] m-4">
-						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#0F1E3A] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="text" placeholder="Search your Product" />
-						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-y-1/2 right-1 cursor-pointer" icon={faMagnifyingGlass} />
+						<input value={search} onChange={(event) => (setSearch(event.target.value))} onFocus={() => (setIsFocus(true))} onBlur={() => (setIsFocus(false))} className="bg-[#0F1E3A] text-[#F4F8FF] border-2 border-[#202C45] rounded-2xl p-1 pr-10 w-full" type="search" placeholder="Search your Product" />
+						<FontAwesomeIcon className="w-5 h-5 absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer text-white" icon={faMagnifyingGlass} />
 						<SearchResult products={products} search={search} is_focus={is_focus}/>
 					</div>
 				</div>

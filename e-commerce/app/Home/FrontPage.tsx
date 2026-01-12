@@ -10,7 +10,7 @@ export default function FrontPage(): JSX.Element
 	let	bg_image:string = "/products_images/bg.jpg";
 
 	return (
-		<div className={`h-screen flex flex-col justify-between bg-no-repeat bg-cover bg-center`} style={{backgroundImage: `url(${bg_image})`}}>
+		<div className="h-screen flex flex-col justify-between bg-no-repeat bg-cover bg-center bg-[url(/products_images/bg.jpg)]">
 			<MenuBar />
 			<div className="text-white p-10 sm:p-20 w-full sm:w-1/2">
 					<h1 className="text-5xl sm:text-7xl mb-10 font-bold">Let's Level Up Your Game</h1>

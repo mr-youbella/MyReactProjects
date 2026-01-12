@@ -86,7 +86,7 @@ export default function FilterProduct(): JSX.Element
 				<h3 className="text-xl mb-2">Filter by Price</h3>
 				<input min={0} max={100} onChange={(event) => (setRange(Number(event.target.value)))} value={range} className="block w-full mb-2 accent-blue-600" type="range"/>
 				<div className="flex">
-					<button className="rounded-sm text-white bg-blue-500 p-1 w-[30%] mb-2 mr-2 cursor-pointer hover:bg-blue-600">Filter</button>
+					<button className="rounded-sm text-white bg-blue-500 p-1 w-[30%] mb-2 mr-2 cursor-not-allowed hover:bg-blue-600">Filter</button>
 					<p className="flex justify-end my-auto w-full h-full">Price: {min_range} DH — {Math.floor(min_range + (range / 100) * (max_range - min_range))} DH</p>
 				</div>
 				<h3 className="mt-10 mb-5 text-2xl">Gategory</h3>

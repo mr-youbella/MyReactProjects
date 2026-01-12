@@ -9,8 +9,8 @@ export default function Footer(): JSX.Element {
 		<footer className="flex flex-col gap-2 bg-[#1b1b1b] p-4 mt-4">
 			<div className="flex-1">
 				<div className="p-2 flex">
-					<div className="relative w-20 aspect-square">
-						<Image src="/products_images/logo.webp" alt="logo" fill sizes="80px"/>
+					<div className="relative w-30 sm:w-20 aspect-square">
+						<Image src="/products_images/logo.webp" alt="logo" fill sizes="(max-width: 640px) 120px, 80px"/>
 					</div>
 					<div className="w-full flex justify-center items-center">
 						<h2 className="text-5xl text-white">Youbella Store</h2>
