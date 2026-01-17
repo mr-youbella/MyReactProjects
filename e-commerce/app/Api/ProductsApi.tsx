@@ -5,7 +5,7 @@ export default async function ProductApi(): Promise<ProductsType[] | undefined>
 	let	products: ProductsType[] | undefined = undefined;
 	try 
 	{
-		let response = await fetch("https://raw.githubusercontent.com/mr-youbella/MyReactProjects/refs/heads/main/e-commerce/public/products.json",
+		let response = await fetch("https://test-production-8446.up.railway.app/products",
 		{
 			next: {revalidate: 60}
 		});
