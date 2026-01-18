@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faList } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react';
+import ProductApi from './Api/ProductsApi'
 import Link from 'next/link';
 import Image from 'next/image';
 import type { JSX } from 'react';
@@ -37,16 +38,21 @@ export default function MenuBar()
 	let	[menu_bar, setMenuBar] = useState<boolean>(false);
 	let	[is_focus, setIsFocus] = useState<boolean>(false);
 	let	[search, setSearch] = useState<string>("");
-	let	[products, setProducts] = useState<ProductsType[] | undefined>();
+	let products: ProductsType[] | undefined = undefined;
 	useEffect(() =>
 	{
-		async function ftProducts()
+		async function getDataProducts()
 		{
-			let	products_api = await fetch("https://raw.githubusercontent.com/mr-youbella/MyReactProjects/refs/heads/main/e-commerce/public/products.json", {next: {revalidate: 60}});
-			let	get_products: ProductsType[] = await products_api.json();
-			setProducts(get_products);
+			try
+			{
+				products = await ProductApi();
+			}
+			catch (err)
+			{
+				console.log(err);
+			}
 		}
-		ftProducts();
+		getDataProducts();
 	}, []);
 
 	return (
