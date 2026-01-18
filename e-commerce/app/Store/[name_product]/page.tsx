@@ -16,7 +16,7 @@ export default async function	Product(props: {searchParams: {id: string}}): Prom
 	try
 	{
 		products = await ProductApi();
-		current_product = products && products[id_product - 1];
+		current_product = products && products.find((value) => (value.id === id_product));
 	}
 	catch (err)
 	{
