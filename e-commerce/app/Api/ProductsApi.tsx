@@ -5,7 +5,7 @@ export default async function ProductApi(): Promise<ProductsType[] | undefined>
 	let	products: ProductsType[] | undefined = undefined;
 	try 
 	{
-		let response = await fetch("https://test-production-8446.up.railway.app/products",
+		let response = await fetch("https://test-production-5fea.up.railway.app/products",
 		{
 			next: {revalidate: 60}
 		});
